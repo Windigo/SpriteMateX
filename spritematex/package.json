@@ -1,0 +1,29 @@
+{
+    "name": "SpritemateX",
+    "version": "0.4.1",
+    "description": "A browser based sprite editor for the Commander X16",
+    "homepage": "http://www.oldskoolcoder.co.uk",
+    "author": "OldSkoolCoder based on Ingo Hinterding SpriteMate",
+    "license": "MIT",
+    "main": "App.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/OldSkoolCoder/spritematex"
+    },
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build"
+    },
+    "devDependencies": {
+      "@types/jquery": "^3.5.31",
+      "@types/jqueryui": "^1.12.23",
+      "@typescript-eslint/eslint-plugin": "4.2.0",
+      "@typescript-eslint/parser": "4.2.0",
+      "eslint": "^7.14.0",
+      "eslint-config-prettier": "6.11.0",
+      "eslint-plugin-prettier": "3.1.4",
+      "prettier": "2.1.2",
+      "vite": "^5.4.9"
+    }
+  }
+  

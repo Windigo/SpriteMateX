@@ -1,0 +1,59 @@
+{
+  "name": "spritematex-vscode",
+  "displayName": "SpritemateX",
+  "description": "Commander X16 sprite & tile editor (VS Code port of SpritemateX)",
+  "version": "0.1.0",
+  "publisher": "windigo",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCustomEditor:spritematex.spriteEditor",
+    "onCommand:spritematex.newSprite"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "spritematex.spriteEditor",
+        "displayName": "SpritemateX Sprite Editor",
+        "selector": [
+          {
+            "filenamePattern": "*.spmx"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "spritematex.newSprite",
+        "title": "SpritemateX: New Sprite File",
+        "category": "SpritemateX"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "spritematex.newSprite"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.24.0",
+    "typescript": "^5.4.0"
+  }
+}
