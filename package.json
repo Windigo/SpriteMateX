@@ -5,6 +5,29 @@
   "version": "0.1.0",
   "publisher": "windigo",
   "license": "MIT",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Windigo/SpriteMateX"
+  },
+  "bugs": {
+    "url": "https://github.com/Windigo/SpriteMateX/issues"
+  },
+  "homepage": "https://github.com/Windigo/SpriteMateX#readme",
+  "keywords": [
+    "sprite",
+    "tile",
+    "commander-x16",
+    "x16",
+    "retro",
+    "pixel-art",
+    "spritematex",
+    "8-bit"
+  ],
+  "galleryBanner": {
+    "color": "#1a1a2e",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
