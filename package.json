@@ -3,7 +3,7 @@
   "displayName": "SpritemateX",
   "description": "Commander X16 sprite & tile editor (VS Code port of SpritemateX)",
   "version": "0.1.0",
-  "publisher": "windigo",
+  "publisher": "MennoHomanWindigo",
   "license": "MIT",
   "icon": "images/icon.png",
   "repository": {
