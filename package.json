@@ -1,7 +1,7 @@
 {
   "name": "spritematex-vscode",
   "displayName": "SpritemateX",
-  "description": "Commander X16 sprite & tile editor (VS Code port of SpritemateX)",
+  "description": "Commander X16 sprite & tile editor by OldSkoolCoder (OSK) — VS Code port of SpritemateX",
   "version": "0.1.0",
   "publisher": "MennoHomanWindigo",
   "license": "MIT",
@@ -22,7 +22,11 @@
     "retro",
     "pixel-art",
     "spritematex",
-    "8-bit"
+    "8-bit",
+    "oldskoolcoder",
+    "oldskool-coder",
+    "oldskool coder",
+    "osk"
   ],
   "galleryBanner": {
     "color": "#1a1a2e",
