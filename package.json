@@ -1,19 +1,20 @@
 {
-  "name": "spritematex-vscode",
-  "displayName": "SpritemateX",
-  "description": "Commander X16 sprite & tile editor by OldSkoolCoder (OSK) — VS Code port of SpritemateX",
+  "name": "spritematex-vsc-plugin",
+  "displayName": "SpritemateX (VS Code Plugin)",
+  "description": "A VS Code plugin that runs SpritemateX — the Commander X16 sprite & tile editor by OldSkoolCoder (OSK) — inside a VS Code custom editor.",
   "version": "0.1.0",
   "publisher": "MennoHomanWindigo",
+  "author": "Menno Homan (Windigo)",
   "license": "MIT",
   "icon": "images/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Windigo/SpriteMateX"
+    "url": "https://github.com/Windigo/spritematex-vsc-plugin"
   },
   "bugs": {
-    "url": "https://github.com/Windigo/SpriteMateX/issues"
+    "url": "https://github.com/Windigo/spritematex-vsc-plugin/issues"
   },
-  "homepage": "https://github.com/Windigo/SpriteMateX#readme",
+  "homepage": "https://github.com/Windigo/spritematex-vsc-plugin#readme",
   "keywords": [
     "sprite",
     "tile",

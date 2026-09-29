@@ -1,9 +1,8 @@
-# SpritemateX for VS Code
+# SpritemateX (VS Code Plugin)
 
-The real [SpritemateX](https://burghwallis.com/spritematex/) — the Commander X16
-sprite & tile editor by OldSkoolCoder — running inside VS Code as a custom editor.
+A **VS Code plugin** that runs [SpritemateX](https://burghwallis.com/spritematex/) — the Commander X16 sprite & tile editor by OldSkoolCoder — inside VS Code as a custom editor.
 
-This extension embeds the **unmodified upstream SpritemateX app** (from
+This extension embeds the upstream SpritemateX app (from
 <https://github.com/OldSkoolCoder/SpriteMateX>) in a webview, so you get the full
 original UI: the menu bar (SpritemateX16 / File / Edit / Sprite / View / Help), the
 window-based layout (Editor, Tools, Palette, Preview, Sprite List, Animate, Animate
