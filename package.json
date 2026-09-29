@@ -2,7 +2,7 @@
   "name": "spritematex-vsc-plugin",
   "displayName": "SpritemateX (VS Code Plugin)",
   "description": "A VS Code plugin that runs SpritemateX — the Commander X16 sprite & tile editor by OldSkoolCoder (OSK) — inside a VS Code custom editor.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "publisher": "MennoHomanWindigo",
   "author": "Menno Homan (Windigo)",
   "license": "MIT",
