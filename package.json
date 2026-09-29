@@ -1,7 +1,7 @@
 {
   "name": "spritematex-vsc-plugin",
   "displayName": "SpritemateX (VS Code Plugin)",
-  "description": "A VS Code plugin that runs SpritemateX — the Commander X16 sprite & tile editor by OldSkoolCoder (OSK) — inside a VS Code custom editor.",
+  "description": "A VS Code plugin that runs SpritemateX — the Commander X16 sprite & tile editor by OldSkoolCoder (OSK) — inside a VS Code webview.",
   "version": "1.0.0",
   "publisher": "MennoHomanWindigo",
   "author": "Menno Homan (Windigo)",
@@ -40,48 +40,37 @@
     "Other"
   ],
   "activationEvents": [
-    "onCustomEditor:spritematex.spriteEditor",
-    "onCommand:spritematex.newSprite"
+    "onCommand:spritematex.open"
   ],
-  "main": "./out/extension.js",
+  "main": "./extension.js",
   "contributes": {
-    "customEditors": [
-      {
-        "viewType": "spritematex.spriteEditor",
-        "displayName": "SpritemateX Sprite Editor",
-        "selector": [
-          {
-            "filenamePattern": "*.spmx"
-          }
-        ],
-        "priority": "default"
-      }
-    ],
     "commands": [
       {
-        "command": "spritematex.newSprite",
-        "title": "SpritemateX: New Sprite File",
+        "command": "spritematex.open",
+        "title": "SpritemateX: Open Editor",
         "category": "SpritemateX"
       }
     ],
     "menus": {
       "commandPalette": [
         {
-          "command": "spritematex.newSprite"
+          "command": "spritematex.open"
         }
       ]
-    }
+    },
+    "keybindings": [
+      {
+        "command": "spritematex.open",
+        "key": "ctrl+alt+x",
+        "mac": "cmd+alt+x"
+      }
+    ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "package": "vsce package"
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
-    "@types/node": "^20.11.0",
-    "@types/vscode": "^1.85.0",
-    "@vscode/vsce": "^2.24.0",
-    "typescript": "^5.4.0"
+    "@vscode/vsce": "^2.24.0"
   }
 }

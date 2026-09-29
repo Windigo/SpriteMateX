@@ -26,21 +26,15 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: package-lock.json
-
-      - name: Install root dependencies
-        run: npm ci
-
-      - name: Compile extension (tsc -> out/)
-        run: npm run compile
+          cache-dependency-path: spritematex/package-lock.json
 
       - name: Install SpritemateX dependencies
         working-directory: spritematex
         run: npm ci
 
-      - name: Build SpritemateX app (vite -> dist/)
+      - name: Build SpritemateX app (vite --base=./)
         working-directory: spritematex
-        run: npm run build
+        run: npm run build -- --base=./
 
       - name: Copy dist/ to media/spritematex/
         run: |

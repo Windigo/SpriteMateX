@@ -9,14 +9,8 @@ cd "$(dirname "$0")"
 echo "==> Updaten spritematex-submodule..."
 git submodule update --init --recursive
 
-echo "==> Installeren root dependencies..."
-npm ci
-
-echo "==> Compileren extensie (tsc -> out/)..."
-npm run compile
-
-echo "==> Bouwen SpritemateX-app (vite -> dist/)..."
-(cd spritematex && npm ci && npm run build)
+echo "==> Bouwen SpritemateX-app (vite --base=./)..."
+(cd spritematex && npm ci && npm run build -- --base=./)
 
 echo "==> Kopiëren spritematex/dist -> media/spritematex/"
 rm -rf media/spritematex

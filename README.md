@@ -1,39 +1,23 @@
 # SpritemateX (VS Code Plugin)
 
-A **VS Code plugin** that runs [SpritemateX](https://burghwallis.com/spritematex/) — the Commander X16 sprite & tile editor by OldSkoolCoder — inside VS Code as a custom editor.
+A **VS Code plugin** that runs [SpritemateX](https://burghwallis.com/spritematex/) — the Commander X16 sprite & tile editor by OldSkoolCoder — inside VS Code as a webview panel.
 
-This extension embeds the upstream SpritemateX app (from
+This extension embeds the **unmodified** upstream SpritemateX app (from
 <https://github.com/OldSkoolCoder/SpriteMateX>) in a webview, so you get the full
 original UI: the menu bar (SpritemateX16 / File / Edit / Sprite / View / Help), the
-window-based layout (Editor, Tools, Palette, Preview, Sprite List, Animate, Animate
-List) and all original features.
+window-based layout, and all original features.
 
-## What was changed vs upstream
+## Usage
 
-Only what is strictly needed to run in a VS Code webview:
-
-- jQuery / jQuery UI are bundled locally (the CDN is blocked by the webview CSP).
-- A thin `vscode.ts` bridge replaces the browser download / file-input:
-  - **Save file…** → writes via VS Code (`.spmx` goes back into the open document,
-    other formats open a save dialog).
-  - **Load file…** → opens a VS Code open dialog.
-- `base` is `./` so all assets load relative to the webview.
-
-Everything else (editor, palette, sprites, animation, export formats, `.spmx` /
-`.bin` parsing) is the original code, so files are 100 % compatible with the
-browser version.
-
-## Running
-
-1. `npm install`
-2. Press **F5** (Run Extension) to open an Extension Development Host.
-3. Run **SpritemateX: New Sprite File**, or open any `.spmx` file.
+1. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
+2. Run **SpritemateX: Open Editor**.
+3. Or press `Ctrl+Alt+X` (`Cmd+Alt+X` on macOS).
 
 ## Project layout
 
-- `src/` — the VS Code extension host (custom editor + file bridge).
+- `extension.js` — the VS Code extension host (opens a webview panel).
 - `media/spritematex/` — the built app (shipped in the extension).
-- `spritematex/` — a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) pointing at the fork `Windigo/spritematex-vsc` (upstream SpritemateX + the `vscode.ts` bridge).
+- `spritematex/` — a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) pointing directly at upstream `OldSkoolCoder/SpriteMateX`.
 
 ## Building
 
@@ -41,15 +25,14 @@ browser version.
 ./build-extension.sh
 ```
 
-This compiles the extension (tsc), builds the app (vite), copies it into `media/spritematex/`, and produces `spritematex-vsc-plugin-<version>.vsix`.
+This builds the app (vite with `--base=./`), copies it into `media/spritematex/`, and produces `spritematex-vsc-plugin-<version>.vsix`.
 
 ## Updating the upstream app
 
-The submodule points at the fork `Windigo/spritematex-vsc`, which tracks upstream `OldSkoolCoder/SpriteMateX` plus the VS Code bridge.
-
-The fork **auto-syncs** from upstream via a scheduled GitHub Action, so there's no manual merge step. When the fork gets new commits, Dependabot opens a pull request in this repo — just review and merge it.
+The submodule points directly at upstream, so Dependabot opens a pull request automatically when OldSkoolCoder publishes new commits. Just review and merge it.
 
 ## Upstream
 
 <https://github.com/OldSkoolCoder/SpriteMateX> (MIT)
+
 
