@@ -3,6 +3,4 @@ out/
 *.vsix
 temp/
 *.spmx
-spritematex/node_modules/
-spritematex/dist/
 .DS_Store

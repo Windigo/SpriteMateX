@@ -6,6 +6,9 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+echo "==> Updaten spritematex-submodule..."
+git submodule update --init --recursive
+
 echo "==> Installeren root dependencies..."
 npm ci
 
@@ -24,4 +27,4 @@ echo "==> Packagen VSIX..."
 npx --yes @vscode/vsce@latest package
 
 echo ""
-echo "Klaar: spritematex-vscode-*.vsix staat in deze map."
+echo "Klaar: spritematex-vsc-plugin-*.vsix staat in deze map."

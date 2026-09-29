@@ -32,17 +32,38 @@ browser version.
 ## Project layout
 
 - `src/` — the VS Code extension host (custom editor + file bridge).
-- `media/spritematex/` — the built upstream app (shipped in the extension).
-- `spritematex/` — the upstream source + a `vscode.ts` bridge (for rebuilding).
+- `media/spritematex/` — the built app (shipped in the extension).
+- `spritematex/` — a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) pointing at the fork `Windigo/spritematex-vsc` (upstream SpritemateX + the `vscode.ts` bridge).
 
-## Rebuilding the embedded app
+## Building
 
 ```bash
-cd spritematex
-npm install
-npm run build
-cp -R dist/* ../media/spritematex/
+./build-extension.sh
 ```
+
+This compiles the extension (tsc), builds the app (vite), copies it into `media/spritematex/`, and produces `spritematex-vsc-plugin-<version>.vsix`.
+
+## Updating the upstream app
+
+The submodule points at the fork `Windigo/spritematex-vsc`, which tracks upstream `OldSkoolCoder/SpriteMateX` plus the VS Code bridge. To update:
+
+1. Merge upstream into the fork (the `git remote add` is a one-time setup):
+   ```bash
+   cd spritematex
+   git remote add upstream https://github.com/OldSkoolCoder/SpriteMateX.git
+   git fetch upstream
+   git merge upstream/main
+   git push origin main
+   cd ..
+   ```
+2. Update the submodule pointer in this repo:
+   ```bash
+   git add spritematex
+   git commit -m "Update spritematex fork"
+   git push
+   ```
+
+Dependabot opens a pull request for step 2 when the fork gets new commits; merging upstream into the fork (step 1) is a manual step.
 
 ## Upstream
 
