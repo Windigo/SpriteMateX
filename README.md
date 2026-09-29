@@ -45,25 +45,9 @@ This compiles the extension (tsc), builds the app (vite), copies it into `media/
 
 ## Updating the upstream app
 
-The submodule points at the fork `Windigo/spritematex-vsc`, which tracks upstream `OldSkoolCoder/SpriteMateX` plus the VS Code bridge. To update:
+The submodule points at the fork `Windigo/spritematex-vsc`, which tracks upstream `OldSkoolCoder/SpriteMateX` plus the VS Code bridge.
 
-1. Merge upstream into the fork (the `git remote add` is a one-time setup):
-   ```bash
-   cd spritematex
-   git remote add upstream https://github.com/OldSkoolCoder/SpriteMateX.git
-   git fetch upstream
-   git merge upstream/main
-   git push origin main
-   cd ..
-   ```
-2. Update the submodule pointer in this repo:
-   ```bash
-   git add spritematex
-   git commit -m "Update spritematex fork"
-   git push
-   ```
-
-Dependabot opens a pull request for step 2 when the fork gets new commits; merging upstream into the fork (step 1) is a manual step.
+The fork **auto-syncs** from upstream via a scheduled GitHub Action, so there's no manual merge step. When the fork gets new commits, Dependabot opens a pull request in this repo — just review and merge it.
 
 ## Upstream
 
